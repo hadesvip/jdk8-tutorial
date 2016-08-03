@@ -56,4 +56,34 @@ public class User {
     public void setUserDesc(String userDesc) {
         this.userDesc = userDesc;
     }
+
+    /**
+     * 默认构造
+     */
+    public User() {
+    }
+
+    /**
+     * 初始化用户
+     *  @param userId   用户编号
+     * @param userName 用户名
+     * @param userPwd  　用户密码
+     * @param userDesc 　用户描述
+     */
+    public User(String userId, String userName, String userPwd, String userDesc) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPwd = userPwd;
+        this.userDesc = userDesc;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPwd='" + userPwd + '\'' +
+                ", userDesc='" + userDesc + '\'' +
+                '}';
+    }
 }
