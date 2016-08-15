@@ -110,12 +110,18 @@ public class PointRuleEngineImpl implements PointRuleEngine {
 
     private List<String> getTestDrlFile() {
         List<String> drlFilePath = new ArrayList<>();
+
+        Reader reader = new InputStreamReader(PointRuleEngineImpl.class.getResourceAsStream("/drl/addpoint.drl"));
         /*drlFilePath
                 .add("addpoint.drl");*/
        /* drlFilePath
                 .add("subpoint.drl");*/
 
         return drlFilePath;
+    }
+
+    public static void main(String[] args) {
+        Reader reader = new InputStreamReader(PointRuleEngineImpl.class.getResourceAsStream("/drl/addpoint.drl"));
     }
 
 }
