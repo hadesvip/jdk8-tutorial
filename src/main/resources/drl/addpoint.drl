@@ -1,0 +1,17 @@
+package drl.point;
+dialect  "mvel"
+import com.bean.PointDomain;
+
+rule "addpoint"
+
+    //过生日，则加十分，并且将当月交易比数翻倍后再计算积分
+    salience 100
+    lock-on-active true
+    when
+        $point:PointDomain(birthDay)
+    then
+        $point.setPoint($point.getPoint()+10);
+        $point.setBuyNums($point.getBuyNums()*2);
+        $point.setBuyMoney($point.getBuyMoney()*2);
+        $point.setBillThisMonth($point.getBillThisMonth()*2);
+end
