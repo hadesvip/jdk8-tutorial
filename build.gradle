@@ -4,16 +4,22 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenLocal()
-    mavenCentral()
+	maven{
+		name 'aliyun'
+		url 'http://maven.aliyun.com/nexus/content/groups/public'
+	}
 
     //必须加上jboss仓库，要不然找不到down不下来drools包
     maven {
         name 'jboss'
         url 'http://repository.jboss.org/nexus/content/groups/public-jboss'
     }
+	mavenCentral()
+	
 }
 
 dependencies {
